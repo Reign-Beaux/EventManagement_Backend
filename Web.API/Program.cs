@@ -1,3 +1,5 @@
+using Application;
+using Infraestructure;
 using Web.API;
 using Web.API.Middlewares;
 
@@ -5,7 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services
-    .AddAPI(builder.Configuration);
+    .AddAPI(builder.Configuration)
+    .AddApplication(builder.Configuration)
+    .AddInfraestructure();
 
 var app = builder.Build();
 
