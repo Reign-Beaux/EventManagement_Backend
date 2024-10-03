@@ -1,4 +1,4 @@
-﻿namespace Domain.Adapters
+﻿namespace Application.Contracts.Adapters
 {
     public interface IEncryptionAdapter
     {

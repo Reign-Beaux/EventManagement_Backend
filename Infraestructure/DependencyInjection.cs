@@ -1,4 +1,4 @@
-﻿using Domain.Adapters;
+﻿using Application.Contracts.Adapters;
 using Domain.UnitOfWork;
 using Infraestructure.Adapters;
 using Infraestructure.Persistence.EventManagement;
@@ -21,6 +21,7 @@ namespace Infraestructure
         private static IServiceCollection AddAdapters(this IServiceCollection services)
         {
             services.AddTransient<IEncryptionAdapter, BCryptAdapter>();
+
             return services;
         }
 
