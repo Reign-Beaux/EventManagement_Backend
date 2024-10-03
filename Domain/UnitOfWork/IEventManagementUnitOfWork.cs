@@ -2,9 +2,8 @@
 
 namespace Domain.UnitOfWork
 {
-    public interface IEventManagementUnitOfWork
+    public interface IEventManagementUnitOfWork : IUnitOfWork
     {
         public IUserRepository UsersRepository { get; }
-        public void Commit();
     }
 }
