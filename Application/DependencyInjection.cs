@@ -1,5 +1,5 @@
-﻿using Application.Common.Behaviors;
-using Application.Common.Models.Settings;
+﻿using Application.Behaviors;
+using Application.Models.Settings;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 

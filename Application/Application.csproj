@@ -23,4 +23,9 @@
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="UseCases\Auth\Commands\Login\" />
+    <Folder Include="UseCases\Users\" />
+  </ItemGroup>
+
 </Project>

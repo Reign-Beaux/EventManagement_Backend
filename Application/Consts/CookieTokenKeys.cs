@@ -1,4 +1,4 @@
-﻿namespace Application.Common.Consts
+﻿namespace Application.Consts
 {
     public static class CookieTokenKeys
     {

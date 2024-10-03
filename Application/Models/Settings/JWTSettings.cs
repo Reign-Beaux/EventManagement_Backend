@@ -1,4 +1,4 @@
-﻿namespace Application.Common.Models.Settings
+﻿namespace Application.Models.Settings
 {
     public class JWTSettings
     {

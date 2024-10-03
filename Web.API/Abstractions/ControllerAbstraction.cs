@@ -1,4 +1,4 @@
-﻿using Application.Common.Consts;
+﻿using Application.Consts;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace Web.API.Abstractions

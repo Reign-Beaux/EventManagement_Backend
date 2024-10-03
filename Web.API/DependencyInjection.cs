@@ -1,4 +1,4 @@
-﻿using Application.Common.Consts;
+﻿using Application.Consts;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
