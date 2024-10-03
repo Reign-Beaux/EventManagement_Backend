@@ -1,4 +1,4 @@
-﻿using Domain.Entities.Users;
+﻿using Domain.Entities.EventManagement.Users;
 using Infraestructure.Abstractions;
 
 namespace Infraestructure.Persistence.EventManagement.Repositories

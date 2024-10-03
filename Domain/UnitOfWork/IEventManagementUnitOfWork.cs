@@ -1,4 +1,4 @@
-﻿using Domain.Entities.Users;
+﻿using Domain.Entities.EventManagement.Users;
 
 namespace Domain.UnitOfWork
 {

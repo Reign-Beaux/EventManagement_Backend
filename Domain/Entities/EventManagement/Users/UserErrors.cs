@@ -1,4 +1,4 @@
-﻿namespace Domain.Entities.Users
+﻿namespace Domain.Entities.EventManagement.Users
 {
     public static class UserErrors
     {

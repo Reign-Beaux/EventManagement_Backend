@@ -1,6 +1,6 @@
 ﻿using Domain.Abstractions;
 
-namespace Domain.Entities.Users
+namespace Domain.Entities.EventManagement.Users
 {
     public class User : EntityAbstraction
     {
