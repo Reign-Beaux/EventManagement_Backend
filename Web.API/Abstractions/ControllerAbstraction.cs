@@ -18,7 +18,7 @@ namespace Web.API.Abstractions
                 return ValidationProblem(errors);
             }
 
-            HttpContext.Items[HttpContextItemKeys.Errors] = errors;
+            HttpContext.Items[HttpContextItem.Errors] = errors;
 
             return Problem(errors[0]);
         }

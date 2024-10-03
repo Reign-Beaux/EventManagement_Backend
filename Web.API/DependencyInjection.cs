@@ -1,4 +1,4 @@
-﻿using Application.Consts;
+﻿using Application.Enums;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
@@ -41,7 +41,7 @@ namespace Web.API
                     {
                         OnMessageReceived = context =>
                         {
-                            context.Token = context.Request.Cookies[CookieTokenKeys.AccessToken];
+                            context.Token = context.Request.Cookies[TokenType.Access.ToString()];
                             return Task.CompletedTask;
                         },
                         OnAuthenticationFailed = context =>
