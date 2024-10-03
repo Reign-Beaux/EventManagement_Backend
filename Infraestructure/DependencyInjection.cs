@@ -1,5 +1,4 @@
 ﻿using Application.Contracts.Adapters;
-using Domain.UnitOfWork;
 using Infraestructure.Adapters;
 using Infraestructure.Persistence.EventManagement;
 using Microsoft.Extensions.DependencyInjection;
