@@ -4,7 +4,6 @@
     {
         Access,
         Refresh,
-        Temporal,
         Unique,
     }
 }
