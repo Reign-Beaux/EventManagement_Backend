@@ -1,6 +1,9 @@
 ﻿using Application.Contracts.Adapters;
+using Application.Contracts.Services;
+using Domain.UnitOfWork;
 using Infraestructure.Adapters;
 using Infraestructure.Persistence.EventManagement;
+using Infraestructure.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Infraestructure
@@ -26,6 +29,7 @@ namespace Infraestructure
 
         private static IServiceCollection AddServices(this IServiceCollection services)
         {
+            services.AddTransient<ITokenService, JWTTokenService>();
 
             return services;
         }

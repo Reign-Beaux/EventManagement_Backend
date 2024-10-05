@@ -1,5 +1,6 @@
 ﻿using Application.Consts;
 using Domain.Entities.EventManagement.Users;
+using Domain.UnitOfWork;
 using Infraestructure.Abstractions;
 using Infraestructure.Persistence.EventManagement.Repositories;
 using Microsoft.Extensions.Configuration;

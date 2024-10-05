@@ -26,7 +26,6 @@
     <Folder Include="DTOs\" />
     <Folder Include="Errors\" />
     <Folder Include="Mappings\" />
-    <Folder Include="UseCases\Auth\Commands\Login\" />
     <Folder Include="UseCases\Users\" />
   </ItemGroup>
 

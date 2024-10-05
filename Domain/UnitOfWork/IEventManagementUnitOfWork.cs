@@ -1,7 +1,6 @@
 ﻿using Domain.Entities.EventManagement.Users;
-using Infraestructure.Interfaces;
 
-namespace Infraestructure.Persistence.EventManagement
+namespace Domain.UnitOfWork
 {
     public interface IEventManagementUnitOfWork : IUnitOfWork
     {
