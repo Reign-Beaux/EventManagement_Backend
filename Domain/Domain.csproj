@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Entities\EventManagement\Users\Repository\Responses\" />
-    <Folder Include="Entities\EventManagement\Users\Repository\Parameters\" />
   </ItemGroup>
 
 </Project>
