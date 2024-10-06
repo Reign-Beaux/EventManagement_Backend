@@ -1,5 +1,6 @@
 ﻿using Domain.Entities.EventManagement.Users;
 using Domain.Entities.EventManagement.Users.Repository;
+using Domain.Entities.EventManagement.Users.Repository.Parameters;
 using Domain.ValueObjects;
 using Infraestructure.Abstractions;
 
@@ -37,10 +38,14 @@ namespace Infraestructure.Persistence.EventManagement.Repositories
                 transaction: _dbTransaction);
         }
 
-        public async Task Insert(User user)
+        public async Task Insert(UserInsertParameters parameters)
         {
             var spString = "usp_Users_GET";
-            await _dbConnection.ExecuteAsync(spString, )
+            await _dbConnection.ExecuteAsync(
+                spString,
+                parameters,
+                commandType: CommandType.StoredProcedure,
+                transaction: _dbTransaction);
         }
 
         public Task Update(User user)
