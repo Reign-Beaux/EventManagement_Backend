@@ -1,4 +1,4 @@
-﻿using Application.Contracts.Adapters;
+﻿using Application.Interfaces.Adapters;
 using BC = BCrypt.Net.BCrypt;
 
 namespace Infraestructure.Adapters

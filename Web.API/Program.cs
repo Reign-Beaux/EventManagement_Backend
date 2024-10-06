@@ -11,6 +11,20 @@ builder.Services
     .AddApplication(builder.Configuration)
     .AddInfraestructure();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(
+      name: "cors",
+      builder =>
+      {
+          builder
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials();
+      });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -20,7 +34,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseExceptionHandler("/error");
+
 app.UseHttpsRedirection();
+
+app.UseCors("cors");
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

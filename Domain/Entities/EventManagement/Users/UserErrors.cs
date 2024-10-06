@@ -2,10 +2,24 @@
 
 namespace Domain.Entities.EventManagement.Users
 {
-    public sealed class UserErrors : ErrorsAbstraction<UserErrors>
+    public sealed class UserErrors
     {
-        public const string NotFoundByUsername = "El nombre de usuario no fue encontrado.";
-        public const string NotFoundByEmail = "El correo electrónico no fue encontrado.";
-        public const string IncorrectPassword = "La contraseña es incorrecta.";
+        public static class Format
+        {
+            public const string Email = "El correo electrónico tiene un formato incorrecto.";
+            public const string Username = "El nombre de usuario tiene un formato incorrecto.";
+            public const string Password = "La contraseña tiene un formato incorrecto.";
+        }
+
+        public static class NotFound
+        {
+            public const string Email = "El correo electrónico no fue encontrado.";
+            public const string Username = "El nombre de usuario no fue encontrado.";
+        }
+
+        public static class Auth
+        {
+            public const string Password = "La contraseña es incorrecta.";
+        }
     }
 }

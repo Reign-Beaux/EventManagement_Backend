@@ -1,5 +1,5 @@
-﻿using Application.Contracts.Services;
-using Application.Enums;
+﻿using Application.Enums;
+using Application.Interfaces.Services;
 using Application.Models.Settings;
 using Domain.Entities.EventManagement.Users;
 using Microsoft.Extensions.Options;

@@ -1,7 +1,7 @@
 ﻿using Application.Enums;
 using Domain.Entities.EventManagement.Users;
 
-namespace Application.Contracts.Services
+namespace Application.Interfaces.Services
 {
     public interface ITokenService
     {
