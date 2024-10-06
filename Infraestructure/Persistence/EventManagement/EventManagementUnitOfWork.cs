@@ -1,5 +1,5 @@
 ﻿using Application.Consts;
-using Domain.Entities.EventManagement.Users;
+using Domain.Entities.EventManagement.Users.Repository;
 using Domain.UnitOfWork;
 using Infraestructure.Abstractions;
 using Infraestructure.Persistence.EventManagement.Repositories;
