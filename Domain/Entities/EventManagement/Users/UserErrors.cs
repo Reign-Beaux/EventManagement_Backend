@@ -14,6 +14,7 @@ namespace Domain.Entities.EventManagement.Users
         public static class NotFound
         {
             public const string Email = "El correo electrónico no fue encontrado.";
+            public const string Id = "El usuario no fue encontrado.";
             public const string Username = "El nombre de usuario no fue encontrado.";
         }
 

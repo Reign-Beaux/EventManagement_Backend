@@ -8,11 +8,14 @@ namespace Infraestructure.Persistence.EventManagement.Repositories
     public sealed class UserRepository(IDbTransaction dbTransaction) : RepositoryAbstraction(dbTransaction), IUserRepository
     {
 
-        public async Task<List<User>> Get()
+        public async Task<List<User>> GetAll()
             => await QueryAsync<User>(spString: "usp_Users_GET");
 
         public async Task<User?> GetByEmail(string email)
             => await QuerySingleOrDefaultAsync<User>(spString: "usp_Users_GET", parameters: new { Email = email });
+
+        public async Task<User?> GetById(Guid id)
+            => await QuerySingleOrDefaultAsync<User>(spString: "usp_Users_GET", parameters: new { Id = id });
 
         public async Task<User?> GetByUsername(string username)
             => await QuerySingleOrDefaultAsync<User>(spString: "usp_Users_GET", parameters: new { Username = username });

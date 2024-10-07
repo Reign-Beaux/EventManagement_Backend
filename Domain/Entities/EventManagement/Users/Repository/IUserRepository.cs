@@ -4,8 +4,9 @@ namespace Domain.Entities.EventManagement.Users.Repository
 {
     public interface IUserRepository
     {
-        Task<List<User>> Get();
+        Task<List<User>> GetAll();
         Task<User?> GetByEmail(string email);
+        Task<User?> GetById(Guid id);
         Task<User?> GetByUsername(string username);
         Task Insert(UserInsertParameters parameters);
         Task Update(UserUpdateParameters user);

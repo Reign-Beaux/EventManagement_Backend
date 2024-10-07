@@ -25,7 +25,6 @@
   <ItemGroup>
     <Folder Include="Errors\" />
     <Folder Include="Mappings\" />
-    <Folder Include="UseCases\Users\Queries\" />
   </ItemGroup>
 
 </Project>
