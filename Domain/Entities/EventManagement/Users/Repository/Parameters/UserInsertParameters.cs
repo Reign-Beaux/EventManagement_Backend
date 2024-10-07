@@ -1,8 +1,11 @@
 ﻿namespace Domain.Entities.EventManagement.Users.Repository.Parameters
 {
-    public record UserInsertParameters(Guid UserTypeId,
-        string Username,
-        string Email,
-        string PasswordHash,
-        Guid CreatedBy);
+    public class UserInsertParameters
+    {
+        public Guid UserTypeId { get; set; }
+        public string? Username { get; set; }
+        public string? Email { get; set; }
+        public string? PasswordHash { get; set; }
+        public Guid CreatedBy { get; set; }
+    }
 }
