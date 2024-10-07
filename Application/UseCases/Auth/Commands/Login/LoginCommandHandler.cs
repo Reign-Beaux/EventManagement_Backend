@@ -22,7 +22,7 @@ namespace Application.UseCases.Auth.Commands.Login
             User? user;
             if (request.UsernameOrEmail.Contains('@'))
             {
-                if (Username.Create(request.UsernameOrEmail) is not Username email)
+                if (Email.Create(request.UsernameOrEmail) is not Email email)
                     return _error.Validation<LoginCommand>(UserErrors.Format.Email, nameof(request.UsernameOrEmail));
 
                 user = await _eventManagement.UsersRepository.GetByEmail(email.Value);
@@ -31,10 +31,10 @@ namespace Application.UseCases.Auth.Commands.Login
             }
             else
             {
-                if (Email.Create(request.UsernameOrEmail) is not Email email)
-                    return _error.Validation<LoginCommand>(UserErrors.Format.Email, nameof(request.UsernameOrEmail));
+                if (Username.Create(request.UsernameOrEmail) is not Username username)
+                    return _error.Validation<LoginCommand>(UserErrors.Format.Username, nameof(request.UsernameOrEmail));
 
-                user = await _eventManagement.UsersRepository.GetByUsername(email.Value);
+                user = await _eventManagement.UsersRepository.GetByUsername(username.Value);
                 if (user is null)
                     return _error.NotFound<LoginCommand>(UserErrors.NotFound.Email, nameof(request.UsernameOrEmail));
             }
