@@ -8,7 +8,7 @@ namespace Domain.Entities.EventManagement.Users.Repository
         Task<User?> GetByEmail(string email);
         Task<User?> GetByUsername(string username);
         Task Insert(UserInsertParameters parameters);
-        Task Update(User user);
-        Task Delete(Guid Id);
+        Task Update(UserUpdateParameters user);
+        Task Delete(Guid id);
     }
 }

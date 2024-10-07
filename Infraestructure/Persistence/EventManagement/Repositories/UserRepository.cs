@@ -1,7 +1,6 @@
 ﻿using Domain.Entities.EventManagement.Users;
 using Domain.Entities.EventManagement.Users.Repository;
 using Domain.Entities.EventManagement.Users.Repository.Parameters;
-using Domain.ValueObjects;
 using Infraestructure.Abstractions;
 
 namespace Infraestructure.Persistence.EventManagement.Repositories
@@ -10,51 +9,21 @@ namespace Infraestructure.Persistence.EventManagement.Repositories
     {
 
         public async Task<List<User>> Get()
-        {
-            var spString = "usp_Users_GET";
-            return (await _dbConnection.QueryAsync<User>(
-                spString,
-                commandType: CommandType.StoredProcedure,
-                transaction: _dbTransaction)).ToList();
-        }
+            => await QueryAsync<User>(spString: "usp_Users_GET");
 
         public async Task<User?> GetByEmail(string email)
-        {
-            var spString = "usp_Users_GET";
-            return await _dbConnection.QuerySingleOrDefaultAsync<User>(
-                spString,
-                new { Email = email },
-                commandType: CommandType.StoredProcedure,
-                transaction: _dbTransaction);
-        }
+            => await QuerySingleOrDefaultAsync<User>(spString: "usp_Users_GET", parameters: new { Email = email });
 
         public async Task<User?> GetByUsername(string username)
-        {
-            var spString = "usp_Users_GET";
-            return await _dbConnection.QuerySingleOrDefaultAsync<User>(
-                spString,
-                new { Username = username },
-                commandType: CommandType.StoredProcedure,
-                transaction: _dbTransaction);
-        }
+            => await QuerySingleOrDefaultAsync<User>(spString: "usp_Users_GET", parameters: new { Username = username });
 
         public async Task Insert(UserInsertParameters parameters)
-        {
-            var spString = "usp_Users_GET";
-            await _dbConnection.ExecuteAsync(
-                spString,
-                parameters,
-                commandType: CommandType.StoredProcedure,
-                transaction: _dbTransaction);
-        }
+            => await ExecuteAsync(spString: "usp_Users_INS", parameters);
 
-        public Task Update(User user)
-        {
-            throw new NotImplementedException();
-        }
-        public Task Delete(Guid Id)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task Update(UserUpdateParameters parameters)
+            => await ExecuteAsync(spString: "usp_Users_UPD", parameters);
+
+        public async Task Delete(Guid id)
+            => await ExecuteAsync(spString: "usp_Users_DEL", parameters: new { Id = id });
     }
 }
