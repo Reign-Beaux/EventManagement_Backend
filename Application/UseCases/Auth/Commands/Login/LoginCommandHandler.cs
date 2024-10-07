@@ -41,7 +41,7 @@ namespace Application.UseCases.Auth.Commands.Login
 
             if (!_encryption.VerifyText(user.PasswordHash, request.Password.Value))
             {
-                return _error.Validation<LoginCommand>(UserErrors.Auth.Password, nameof(request.Password));
+                return _error.Validation<LoginCommand>(UserErrors.BadContent.Password, nameof(request.Password));
             }
 
             /*
