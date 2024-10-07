@@ -2,16 +2,16 @@
 using Domain.Entities.EventManagement.Users.Repository.Parameters;
 using Domain.UnitOfWork;
 
-namespace Application.UseCases.Users.Commands.InsertUser
+namespace Application.UseCases.Users.Commands.UserInsert
 {
-    public class InsertUserCommandHandler(
+    public class UserInsertCommandHandler(
         IEventManagementUnitOfWork eventManagement,
-        IEncryptionAdapter encryption) : IRequestHandler<InsertUserCommand, ErrorOr<Unit>>
+        IEncryptionAdapter encryption) : IRequestHandler<UserInsertCommand, ErrorOr<Unit>>
     {
         private readonly IEventManagementUnitOfWork _eventManagement = eventManagement;
         private readonly IEncryptionAdapter _encryption = encryption;
 
-        public async Task<ErrorOr<Unit>> Handle(InsertUserCommand request, CancellationToken cancellationToken)
+        public async Task<ErrorOr<Unit>> Handle(UserInsertCommand request, CancellationToken cancellationToken)
         {
             string passwordHash = _encryption.HashText(request.Password);
 

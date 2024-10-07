@@ -1,10 +1,10 @@
 ﻿using Domain.Entities.EventManagement.Users;
 
-namespace Application.UseCases.Users.Commands.InsertUser
+namespace Application.UseCases.Users.Commands.UserInsert
 {
-    public class InsertUserCommandValidator : AbstractValidator<InsertUserCommand>
+    public class UserInsertCommandValidator : AbstractValidator<UserInsertCommand>
     {
-        public InsertUserCommandValidator()
+        public UserInsertCommandValidator()
         {
             RuleFor(r => r.UserTypeId)
                 .NotEqual(Guid.Empty).WithMessage(UserErrors.Required.UserTypeId);

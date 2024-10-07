@@ -1,6 +1,6 @@
-﻿namespace Application.UseCases.Users.Commands.InsertUser
+﻿namespace Application.UseCases.Users.Commands.UserInsert
 {
-    public record InsertUserCommand(
+    public record UserInsertCommand(
         Guid UserTypeId,
         string Username,
         string Email,
