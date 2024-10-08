@@ -2,7 +2,6 @@
 using Application.Interfaces.Services;
 using Domain.Entities.EventManagement.Users;
 using Domain.UnitOfWork;
-using Domain.ValueObjects;
 
 namespace Application.UseCases.Auth.Commands.Login
 {
@@ -22,19 +21,13 @@ namespace Application.UseCases.Auth.Commands.Login
             User? user;
             if (request.UsernameOrEmail.Contains('@'))
             {
-                if (Email.Create(request.UsernameOrEmail) is not Email email)
-                    return _error.Validation<LoginCommand>(UserErrors.Format.Email, nameof(request.UsernameOrEmail));
-
-                user = await _eventManagement.UsersRepository.GetByEmail(email.Value);
+                user = await _eventManagement.UsersRepository.GetByEmail(request.UsernameOrEmail);
                 if (user is null)
                     return _error.NotFound<LoginCommand>(UserErrors.NotFound.Email, nameof(request.UsernameOrEmail));
             }
             else
             {
-                if (Username.Create(request.UsernameOrEmail) is not Username username)
-                    return _error.Validation<LoginCommand>(UserErrors.Format.Username, nameof(request.UsernameOrEmail));
-
-                user = await _eventManagement.UsersRepository.GetByUsername(username.Value);
+                user = await _eventManagement.UsersRepository.GetByUsername(request.UsernameOrEmail);
                 if (user is null)
                     return _error.NotFound<LoginCommand>(UserErrors.NotFound.Email, nameof(request.UsernameOrEmail));
             }
