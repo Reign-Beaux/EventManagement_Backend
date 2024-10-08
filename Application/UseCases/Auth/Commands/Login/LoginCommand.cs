@@ -1,6 +1,4 @@
-﻿using Domain.ValueObjects;
-
-namespace Application.UseCases.Auth.Commands.Login
+﻿namespace Application.UseCases.Auth.Commands.Login
 {
-    public record LoginCommand(string UsernameOrEmail, Password Password) : IRequest<ErrorOr<string>>;
+    public record LoginCommand(string UsernameOrEmail, string Password) : IRequest<ErrorOr<string>>;
 }

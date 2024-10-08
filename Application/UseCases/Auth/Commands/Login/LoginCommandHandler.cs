@@ -32,7 +32,7 @@ namespace Application.UseCases.Auth.Commands.Login
                     return _error.NotFound<LoginCommand>(UserErrors.NotFound.Email, nameof(request.UsernameOrEmail));
             }
 
-            if (!_encryption.VerifyText(user.PasswordHash, request.Password.Value))
+            if (!_encryption.VerifyText(user.PasswordHash, request.Password))
             {
                 return _error.Validation<LoginCommand>(UserErrors.BadContent.Password, nameof(request.Password));
             }
