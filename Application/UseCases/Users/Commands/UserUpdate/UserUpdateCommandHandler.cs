@@ -18,7 +18,7 @@ namespace Application.UseCases.Users.Commands.UserUpdate
         {
             User? user = await _eventManagement.UsersRepository.GetById(request.Id);
 
-            if (user is not null)
+            if (user is null)
                 return _error.NotFound<UserUpdateCommand>(UserErrors.NotFound.Id, nameof(request.Id));
 
             string passwordHash = _encryption.HashText(request.Password);
@@ -30,7 +30,7 @@ namespace Application.UseCases.Users.Commands.UserUpdate
                 Username = request.Username,
                 Email = request.Email,
                 PasswordHash = passwordHash,
-                UpdatedBy = Guid.Parse("A2CC6B7D-EE88-4331-9D4C-E5A88C8BF992"),
+                UpdatedBy = Guid.Parse("3BF8D2C7-6C42-4434-912F-98FACF6F5EAE"),
             };
 
             await _eventManagement.UsersRepository.Update(parameters);

@@ -21,7 +21,7 @@ namespace Application.UseCases.Users.Commands.UserInsert
                 Username = request.Username,
                 Email = request.Email,
                 PasswordHash = passwordHash,
-                CreatedBy = Guid.Parse("A2CC6B7D-EE88-4331-9D4C-E5A88C8BF992"),
+                CreatedBy = Guid.Parse("3BF8D2C7-6C42-4434-912F-98FACF6F5EAE"),
             };
 
             await _eventManagement.UsersRepository.Insert(parameters);

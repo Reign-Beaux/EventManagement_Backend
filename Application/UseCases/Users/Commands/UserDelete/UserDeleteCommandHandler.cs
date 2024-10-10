@@ -14,7 +14,7 @@ namespace Application.UseCases.Users.Commands.UserDelete
         {
             User? user = await _eventManagement.UsersRepository.GetById(request.Id);
 
-            if (user is not null)
+            if (user is null)
                 return _error.NotFound<UserUpdateCommand>(UserErrors.NotFound.Id, nameof(request.Id));
 
             await _eventManagement.UsersRepository.Delete(request.Id);

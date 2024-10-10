@@ -65,7 +65,7 @@ namespace Web.API.Controllers
             var response = await _mediator.Send(command);
 
             return response.Match(
-                result => Ok(result),
+                result => NoContent(),
                 errors => Problem(errors)
             );
         }
