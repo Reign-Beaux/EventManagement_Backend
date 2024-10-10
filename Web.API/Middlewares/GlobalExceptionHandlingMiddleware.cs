@@ -22,7 +22,7 @@ namespace Web.API.Middlewares
                     Status = StatusCodes.Status500InternalServerError,
                     Type = "Server Error",
                     Title = "Server Error",
-                    Detail = "An internal server has ocurred."
+                    Detail = e.Message
                 };
 
                 string json = JsonSerializer.Serialize(problem);

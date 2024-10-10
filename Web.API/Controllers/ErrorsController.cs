@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
 
-namespace Web.API.Abstractions
+namespace Web.API.Controllers
 {
     public class ErrorsController : ControllerBase
     {

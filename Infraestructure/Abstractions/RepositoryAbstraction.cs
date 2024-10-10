@@ -10,20 +10,23 @@
                 spString,
                 parameters,
                 commandType: CommandType.StoredProcedure,
-                transaction: _dbTransaction)).ToList();
+                transaction: _dbTransaction,
+                commandTimeout: 60)).ToList();
 
         protected async Task<T?> QuerySingleOrDefaultAsync<T>(string spString, object parameters)
             => await _dbConnection.QuerySingleOrDefaultAsync<T>(
                 spString,
                 parameters,
                 commandType: CommandType.StoredProcedure,
-                transaction: _dbTransaction);
+                transaction: _dbTransaction,
+                commandTimeout: 60);
 
         protected async Task ExecuteAsync(string spString, object parameters)
             => await _dbConnection.ExecuteAsync(
                 spString,
                 parameters,
                 commandType: CommandType.StoredProcedure,
-                transaction: _dbTransaction);
+                transaction: _dbTransaction,
+                commandTimeout: 60);
     }
 }

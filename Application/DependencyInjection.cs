@@ -13,7 +13,8 @@ namespace Application
             var assembly = Assembly.GetExecutingAssembly();
             services.AddMediatR(assembly);
             services.AddAutoMapper(assembly);
-            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+            services.AddValidatorsFromAssembly(assembly);
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
             services.AddSettings(configuration);
 
             return services;
